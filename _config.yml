@@ -1,0 +1,22 @@
+title: "My Personal Website"
+description: "A personal website built with Jekyll and Minimal Mistakes theme."
+baseurl: "" # Leave empty for GitHub Pages
+url: "https://alaaet.github.io" # Replace <username> with your GitHub username
+
+# Minimal Mistakes settings
+remote_theme: "mmistakes/minimal-mistakes"
+
+# Site author
+author:
+  name: "Alaa Abuiteiwi"
+  email: "info@alaaet.com"
+
+# Social links (optional)
+social:
+  twitter: alaaet
+  github: alaaet
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
