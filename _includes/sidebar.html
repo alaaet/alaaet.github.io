@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="author-profile">
+    <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="author-avatar">
+    <!-- <h2>{{ site.author.name }}</h2> -->
+    <!-- <p>{{ site.author.bio }}</p> -->
+    <ul class="author-links">
+      {% for link in site.author.links %}
+      <li>
+        <a href="{{ link.url }}" target="_blank">
+          <i class="{{ link.icon }}"></i> {{ link.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

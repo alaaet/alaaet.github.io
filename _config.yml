@@ -1,15 +1,45 @@
 title: "My Personal Website"
+name: "Alaa Abuiteiwi"
 description: "A personal website built with Jekyll and Minimal Mistakes theme."
 baseurl: "" # Leave empty for GitHub Pages
 url: "https://alaaet.github.io" # Replace <username> with your GitHub username
 
 # Minimal Mistakes settings
-remote_theme: "mmistakes/minimal-mistakes"
+# theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.27.1"
+minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# logo: "/assets/images/88x88.png"
+masthead_title: "Alaa Abuiteiwi"
+masthead_subtitle: "Software Engineer | Web Developer | Tech Enthusiast"
+# masthead_image: "/assets/images/masthead.jpg" # Masthead image
 
+# Enable sidebar globally
+layout: single
+sidebar:
+  nav: "_data/navigation.yml"
+footer:
+  links:
+    - label: "Email"
+      icon: "fab fa-fw fa-envelope-square"
+      url: "mailto:info@alaaet.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/alaaet"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/alaaet"
 # Site author
 author:
   name: "Alaa Abuiteiwi"
   email: "info@alaaet.com"
+  avatar   : "/assets/img/bio-photo.jpg"
+  bio      : "Software Engineer | Web Developer | Tech Enthusiast"
+  location : "Valencia, Spain"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/alaaet"
+
 
 # Social links (optional)
 social:
@@ -20,3 +50,5 @@ social:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-include-cache
