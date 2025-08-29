@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,7 @@ import {
   GitFork,
   Eye
 } from "lucide-react";
+import { getAllArticles } from "@/lib/articles";
 
 export default function Index() {
   const { scrollYProgress } = useScroll();
@@ -107,29 +109,7 @@ export default function Index() {
     }
   ];
 
-  const blogPosts = [
-    {
-      title: "The Evolution of Ransomware: From Simple Encryption to Supply Chain Attacks",
-      excerpt: "An in-depth analysis of how ransomware has evolved and what organizations can do to protect themselves.",
-      date: "2024-01-15",
-      readTime: "8 min read",
-      url: "#"
-    },
-    {
-      title: "Building Secure APIs: A Developer's Guide to Preventing Common Vulnerabilities",
-      excerpt: "Best practices for securing REST APIs against OWASP Top 10 vulnerabilities with practical examples.",
-      date: "2024-01-08",
-      readTime: "12 min read",
-      url: "#"
-    },
-    {
-      title: "Container Security: Securing Docker and Kubernetes in Production",
-      excerpt: "Essential security considerations when deploying containerized applications at scale.",
-      date: "2024-01-02",
-      readTime: "10 min read",
-      url: "#"
-    }
-  ];
+  const blogPosts = getAllArticles().slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background">
@@ -456,27 +436,27 @@ export default function Index() {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <Card className="h-full hover:border-primary/50 transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
-                      </CardTitle>
-                      <a href={post.url} className="text-muted-foreground hover:text-primary transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
-                    <CardDescription className="line-clamp-3">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                <Link to={`/blog/${post.slug}`}>
+                  <Card className="h-full hover:border-primary/50 transition-all duration-300">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
+                          {post.title}
+                        </CardTitle>
+                        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                      <CardDescription className="line-clamp-3">
+                        {post.excerpt}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between text-sm text-muted-foreground">
+                        <span>{new Date(post.date).toLocaleDateString()}</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
