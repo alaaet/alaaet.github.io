@@ -11,8 +11,6 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Calendar, Clock, Share, Github, Linkedin, Mail } from "lucide-react";
 import { getArticleBySlug, getAllArticles, type Article } from "@/lib/articles";
 
-import "highlight.js/styles/github-dark.css";
-
 export default function Article() {
   const { year, month, slug } = useParams();
   const [article, setArticle] = useState<Article | null>(null);
