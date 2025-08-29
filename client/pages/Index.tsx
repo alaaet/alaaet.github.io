@@ -146,12 +146,20 @@ export default function Index() {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
+            className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-6">
+            <div className="relative w-32 h-32 mx-auto mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Faac799cf975147eabc9d4bdfb8eecb3f%2Fc76cb21027b44760aee61cce73d0b56f?format=webp&width=800"
+                alt="Alaa Abuiteiwi - Cybersecurity Expert"
+                className="w-full h-full rounded-full object-cover border-4 border-primary/20 shadow-2xl"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-accent/20 animate-pulse" />
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
               <Shield className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Cybersecurity Expert & Software Developer</span>
             </div>
