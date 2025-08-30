@@ -6,6 +6,7 @@ import { createServer } from "./server";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  root: './client',
   server: {
     host: "::",
     port: 8080,
@@ -15,7 +16,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "../dist/spa",
   },
   plugins: [react(), expressPlugin()],
   resolve: {
