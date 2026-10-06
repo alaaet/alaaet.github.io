@@ -527,10 +527,18 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center space-y-4">
           <p className="text-muted-foreground">
             © 2024 Alaa Abuiteiwi. Securing the digital world, one line of code at a time.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
