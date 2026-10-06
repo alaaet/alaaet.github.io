@@ -7,6 +7,7 @@ import { createServer } from "./server";
 export default defineConfig(({ mode }) => ({
   base: process.env.NODE_ENV === 'production' ? '/' : '/',
   root: './client',
+  publicDir: "../public",
   server: {
     host: "::",
     port: 8080,
@@ -17,6 +18,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "../dist/spa",
+    emptyOutDir: true,
   },
   plugins: [react(), expressPlugin()],
   resolve: {
